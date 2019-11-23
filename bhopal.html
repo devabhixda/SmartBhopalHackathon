@@ -61,6 +61,32 @@
       zoom: 15 // starting zoom
     });
 
+    map.on('load', function () {
+      var marker = document.createElement('div');
+      marker.classList = 'truck';
+
+      // Create a new marker
+      truckMarker = new mapboxgl.Marker(marker)
+        .setLngLat(truckLocation)
+        .addTo(map);
+
+      // Create a circle layer
+      map.addLayer({
+        id: 'warehouse',
+        type: 'circle',
+        source: {
+          data: warehouse,
+          type: 'geojson'
+        },
+        paint: {
+          'circle-radius': 10,
+          'circle-color': 'white',
+          'circle-stroke-color': '#3887be',
+          'circle-stroke-width': 3
+        }
+      });
+
+
   </script>
 </body>
 
