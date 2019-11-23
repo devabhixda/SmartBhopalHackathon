@@ -35,6 +35,33 @@
   </style>
 </head>
 
+<body>
+  <div id='map' class='contain'></div>
+  <script>
 
+    var truckLocation = [77.412, 23.259];
+    var warehouseLocation = [77.412, 23.259];
+    var lastQueryTime = 0;
+    var lastAtRestaurant = 0;
+    var keepTrack = [];
+    var currentSchedule = [];
+    var currentRoute = null;
+    var pointHopper = {};
+    var pause = true;
+    var speedFactor = 50;
+
+    // Add your access token
+    mapboxgl.accessToken = '';
+
+    // Initialize a map
+    var map = new mapboxgl.Map({
+      container: 'map', // container id
+      style: 'mapbox://styles/mapbox/light-v10', // stylesheet location
+      center: truckLocation, // starting position
+      zoom: 15 // starting zoom
+    });
+
+  </script>
+</body>
 
 </html>
